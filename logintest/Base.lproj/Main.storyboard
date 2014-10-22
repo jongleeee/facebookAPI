@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,20 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nG6-vv-abe" customClass="FBLoginView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="99" y="188" width="203" height="81"/>
-                                </variation>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW9-Xm-jOd">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="158" y="99" width="84" height="21"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="158" y="99" width="121" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqp-9r-Utl">
@@ -38,7 +32,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="180" y="298" width="42" height="21"/>
+                                    <rect key="frame" x="180" y="298" width="197" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udh-V5-SkL">
@@ -47,35 +41,81 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="348" width="42" height="21"/>
+                                    <rect key="frame" x="179" y="348" width="164" height="21"/>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xaz-GC-f9H" customClass="FBProfilePictureView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nG6-vv-abe" customClass="FBLoginView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="68" y="158" width="260" height="68"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="DCC-4N-4o5"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gW9-Xm-jOd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="142" id="3C6-YL-Mx8"/>
+                            <constraint firstItem="nG6-vv-abe" firstAttribute="top" secondItem="gW9-Xm-jOd" secondAttribute="bottom" constant="38" id="74h-Ec-7wd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gW9-Xm-jOd" secondAttribute="trailing" constant="142" id="HvY-wC-qRa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nG6-vv-abe" secondAttribute="trailing" constant="79" id="TI7-gB-G2l"/>
+                            <constraint firstItem="gW9-Xm-jOd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="79" id="e02-VN-h4Z"/>
+                            <constraint firstItem="nG6-vv-abe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="82" id="qG5-3w-6hq"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="nG6-vv-abe"/>
                                 <exclude reference="gW9-Xm-jOd"/>
                                 <exclude reference="Xqp-9r-Utl"/>
                                 <exclude reference="udh-V5-SkL"/>
+                                <exclude reference="xaz-GC-f9H"/>
+                                <exclude reference="nG6-vv-abe"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="74h-Ec-7wd"/>
+                                <exclude reference="TI7-gB-G2l"/>
+                                <exclude reference="qG5-3w-6hq"/>
+                                <exclude reference="3C6-YL-Mx8"/>
+                                <exclude reference="HvY-wC-qRa"/>
+                                <exclude reference="e02-VN-h4Z"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="nG6-vv-abe"/>
                                 <include reference="gW9-Xm-jOd"/>
                                 <include reference="Xqp-9r-Utl"/>
                                 <include reference="udh-V5-SkL"/>
+                                <include reference="xaz-GC-f9H"/>
+                                <include reference="nG6-vv-abe"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="74h-Ec-7wd"/>
+                                <include reference="TI7-gB-G2l"/>
+                                <include reference="qG5-3w-6hq"/>
+                                <include reference="3C6-YL-Mx8"/>
+                                <include reference="HvY-wC-qRa"/>
+                                <include reference="e02-VN-h4Z"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="loginView" destination="nG6-vv-abe" id="h96-bS-5ri"/>
                         <outlet property="nameLabel" destination="Xqp-9r-Utl" id="TSL-Xh-Svs"/>
+                        <outlet property="profilePictureView" destination="xaz-GC-f9H" id="hAd-vc-IUi"/>
                         <outlet property="statusLabel" destination="udh-V5-SkL" id="NUe-N1-dkE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="532.5" y="535"/>
         </scene>
     </scenes>
 </document>

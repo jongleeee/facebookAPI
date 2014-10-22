@@ -17,12 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"public_profile", @"email", @"user_friends"]];
+
+    self.loginView.readPermissions = @[@"public_profile", @"email"];
+
 }
 
 
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
+
     self.nameLabel.text = user.name;
 }
 
@@ -32,6 +35,7 @@
 
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
+
     self.nameLabel.text = @"";
     self.statusLabel.text= @"You're not logged in!";
 }
