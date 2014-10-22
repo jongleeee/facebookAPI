@@ -31,7 +31,15 @@
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
     self.statusLabel.text = @"You're logged in as";
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"good" message:@"logged in" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+    [alert show];
+    
+    [self performSegueWithIdentifier:@"main" sender:self];
+    
 }
+
+
 
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
